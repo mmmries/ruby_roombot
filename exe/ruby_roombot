@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-require 'toetactics'
+require 'ruby_roombot'
 
-::Toetactics::CLI.start(ARGV)
+::RubyRoombot::CLI.start(ARGV)

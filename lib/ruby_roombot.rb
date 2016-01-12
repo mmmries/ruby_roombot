@@ -1,7 +1,7 @@
-require "toetactics/version"
-require "toetactics/cli"
-require "toetactics/client"
+require "ruby_roombot/version"
+require "ruby_roombot/cli"
+require "ruby_roombot/client"
 
-module Toetactics
+module RubyRoombot
   # Your code goes here...
 end

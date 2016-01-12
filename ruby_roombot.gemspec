@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'toetactics/version'
+require 'ruby_roombot/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "toetactics"
-  spec.version       = Toetactics::VERSION
+  spec.name          = "ruby_roombot"
+  spec.version       = RubyRoombot::VERSION
   spec.authors       = ["mmmries"]
   spec.email         = ["michael@riesd.com"]
 
-  spec.summary       = "A sample client for playing tic-tac-toe on http://games.riesd.com/"
+  spec.summary       = "A sample client for connection to a roombot (see http://roombots.riesd.com/)"
   spec.description   = spec.summary
-  spec.homepage      = "https://github.com/mmmries/toetactics"
+  spec.homepage      = "https://github.com/mmmries/ruby_roombot"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
