@@ -1,14 +1,18 @@
-# Toetactics
+# RubyRoombot
 
-This is a little library that can act as a programmatic client for playing TicTacToe on http://games.riesd.com/
+This is a little library that can act as a programmatic client for connecting to and driving [a roombot](http://roombots.riesd.com/).
 
-To start a game clone this repository locally, bundle install and then run a command like:
+To start clone this repository locally, bundle install and then run a command like:
 
 ```
-ruby -Ilib exe/toetactics play game5
+ruby -Ilib exe/ruby_roombots drive 192.168.0.0.2
 ```
 
 You will see a lot of output about the messages received and sent by this client so you can decide how to customize it.
+
+## Customizing
+
+Every time you get some sensor updates your `RubyRoombot::Client#on_message` method will be called with the message. Out of the box this method just logs the message, but you can change it to use that information to decide what driving commands you should send back to the roombot.
 
 ## Contributing
 
