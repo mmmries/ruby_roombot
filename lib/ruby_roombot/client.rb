@@ -6,10 +6,11 @@ module RubyRoombot
     include Celluloid
     include Celluloid::Logger
 
-    attr_reader :connection
+    attr_reader :connection, :channel
 
-    def initialize(url)
+    def initialize(url, channel)
       @connection = Celluloid::WebSocket::Client.new(url, current_actor)
+      @channel = channel
     end
 
     def heartbeat
@@ -18,7 +19,7 @@ module RubyRoombot
 
     def join
       send({
-        topic: "roomba",
+        topic: channel,
         event: "phx_join",
         payload: {},
         ref: 1,
@@ -42,6 +43,9 @@ module RubyRoombot
     def on_message(data)
       info("message: #{data.inspect}")
       decoded = ::JSON.parse(data)
+      if decoded["event"] == "phx_reply" && decoded["ref"] == 1 #joined the topic
+        send(topic: channel, event: "drive", ref: 15, payload: {velocity: 100, radius: 50})
+      end
     end
 
     def on_close(code, reason)

@@ -2,7 +2,13 @@
 
 This is a little library that can act as a programmatic client for connecting to and driving [a roombot](http://roombots.riesd.com/).
 
-To start clone this repository locally, bundle install and then run a command like:
+To connect to the roombot simulator you would clone this repository and run a command like:
+
+```
+ruby -Ilib exe/ruby_roombots drive roombots.riesd.com --channel YOUR_UNIQUE_CHANNEL
+```
+
+To connect to a physical roombot you can use the default channel and just point to the IP address of the roombot:
 
 ```
 ruby -Ilib exe/ruby_roombots drive 192.168.0.0.2
