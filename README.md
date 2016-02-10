@@ -5,13 +5,13 @@ This is a little library that can act as a programmatic client for connecting to
 To connect to the roombot simulator you would clone this repository and run a command like:
 
 ```
-ruby -Ilib exe/ruby_roombots drive roombots.riesd.com --channel YOUR_UNIQUE_CHANNEL
+ruby -Ilib exe/ruby_roombot drive roombots.riesd.com --channel YOUR_UNIQUE_CHANNEL
 ```
 
 To connect to a physical roombot you can use the default channel and just point to the IP address of the roombot:
 
 ```
-ruby -Ilib exe/ruby_roombots drive 192.168.0.0.2
+ruby -Ilib exe/ruby_roombot drive 192.168.0.0.2
 ```
 
 You will see a lot of output about the messages received and sent by this client so you can decide how to customize it.
