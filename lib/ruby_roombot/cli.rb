@@ -8,7 +8,6 @@ module RubyRoombot
     def drive(roomba_ip)
       url = "ws://#{roomba_ip}/socket/websocket?vsn=1.0.0"
       client = RubyRoombot::Client.new(url, options[:channel])
-      client.join
 
       loop do
         sleep 1.0
